@@ -3,7 +3,7 @@
 import "./globals.css";
 
 import Footer from "@/components/layouts/Footer";
-import Header from "@/components/layouts/Header";
+import Header from "@/components/layouts/header/Header";
 import LandingRoute from "./landing/page";
 import { figtreeFont } from "./utils/fonts";
 import { usePathname } from "next/navigation";
@@ -33,7 +33,7 @@ export default function RootLayout({
           <div className="flex flex-col h-full">
             <Header />
 
-            <main className="bg-amber-100 w-full flex max-w-[1200px] flex-col h-screen place-items-center m-auto ">
+            <main className="bg-amber-100 w-full flex max-w-[1200px] flex-col h-screen place-items-center m-auto p-5">
               {children}
             </main>
 

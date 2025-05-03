@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   // Important to make images unoptimized as they will be broken otherwise
   // output: "export",
   // images: { unoptimized: true },
+  trailingSlash: true,
 };
 
 export default nextConfig;
