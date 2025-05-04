@@ -7,6 +7,26 @@ const nextConfig: NextConfig = {
   // output: "export",
   // images: { unoptimized: true },
   trailingSlash: true,
+
+  webpack(config) {
+    // Treat SVGs as react components
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
+
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
 };
 
 export default nextConfig;
